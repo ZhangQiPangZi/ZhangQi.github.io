@@ -14,17 +14,18 @@
 <meta name="author" content="张祺" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
+<meta name="description" content="首先解释下abstract，abstract（抽象）可以修饰类、方法。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ZQ&#39;s Blog">
-<meta property="og:url" content="https://zhangqipangzi.github.io/ZhangQi.github.io/index.html">
+<meta property="og:url" content="https://zhangqipangzi.github.io/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/index.html">
 <meta property="og:site_name" content="ZQ&#39;s Blog">
+<meta property="og:description" content="首先解释下abstract，abstract（抽象）可以修饰类、方法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-12T07:01:50.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZQ&#39;s Blog">
+<meta name="twitter:description" content="首先解释下abstract，abstract（抽象）可以修饰类、方法。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,8 +53,6 @@
 <link rel="stylesheet" href="/ZhangQi.github.io/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -67,8 +66,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -262,9 +261,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-abstract浅谈及与哪些关键字不能共存（java）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-abstract浅谈及与哪些关键字不能共存（java）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/" class="article-date">
@@ -282,77 +279,89 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <font size="4" face="微软雅黑"><br>　　首先解释下abstract，abstract（抽象）可以修饰类、方法。<br>
-          
+        <font size="4" face="微软雅黑"><br>　　首先解释下abstract，abstract（抽象）可以修饰类、方法。<br>    <a id="more"></a><br>　　abstract修饰类时代表这个类为抽象类，即这个类不能被实例化，那么它有什么用呢，即被继承（实际上这也是它最主要的作用），<strong>抽象类中可以不含抽象方法</strong>。<br>　　abstract也可以修饰方法，此时该方法为抽象方法，它不需要实现（事实上也无法对此方法在抽象类内进行实现），如这种<code>public abstract void fun();</code>，抽象方法只能在子类通过重写进行实现，<strong>若一个类含抽象方法，那么它肯定是抽象类</strong>。<br>　　<br>　　下面对与abstract不能共存的三个关键字总结一下：<br>　　<br>　　<strong>private</strong>：<br>　　因为private修饰的方法无法被继承，故无法与abstract共存，如要执意共存（<code>private abstract void fun();</code>），编译器会报这个<code>The abstract method fun in type Test1 can only set a visibility modifier, one of public or protected</code>，即只能用public，protected修饰（其实不写也行，默认包内访问权限）。<br>　　<br>　　<strong>final</strong><br>　　用final修饰的类代表此类不可被继承，与abstract修饰的类相互矛盾，所以不能共存，而用final修饰的方法代表这个方法不能被重写，所以也无法与abstract共存。<br>　　<br>　　<strong>static</strong><br>　　静态，用静态修饰的方法代表是属于类所有的，这个方法不能被重写（提一句，这个方法可以在子类内被重定义），所以它也无法与abstract共存。<br><br>　　<br>　　<br></font>
       
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-面向对象的三个基本特征（java） " class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/ZhangQi.github.io/2018/04/11/面向对象的三个基本特征（java） /" class="article-date">
-      <time datetime="2018-04-11T09:15:56.820Z" itemprop="datePublished">2018-04-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>#封装<br> <font size="5" face="微软雅黑"><br> 　　封装是面向对象里的一种最基本的特征，也是对象和类最主要的特征，众所周知，对象是类的一个实例化，对象实例的就是类中的数据成员及方法，而封装指的就是将这些方法及数据成员封存到类里去，外部若想访问这个类，只能通过对象或者是可调用它的其他类（也包括这个类本身）。<br> </font><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/ZhangQi.github.io/2018/04/11/面向对象的三个基本特征（java） /#more">阅读全文 >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">张祺</a></p>
+        <p><span>发布时间:</span>2018-04-12, 15:01:04</p>
+        <p><span>最后更新:</span>2018-04-12, 15:01:50</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/" title="">https://zhangqipangzi.github.io/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://zhangqipangzi.github.io/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/　　作者: 张祺" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-    
-  </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/ZhangQi.github.io/2018/04/11/面向对象的三个基本特征（java） /">
+                    
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| ZQ's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -360,9 +369,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/ZhangQi.github.io/2018/04/11/面向对象的三个基本特征（java） /" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ZhangQi.github.io/2018/04/12/abstract浅谈及与哪些关键字不能共存（java）/">abstract浅谈及与哪些关键字不能共存（java）</a></li><li class="post-list-item"><a class="post-list-link" href="/ZhangQi.github.io/2018/04/11/面向对象的三个基本特征（java） /">面向对象的三个基本特征（java） </a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
